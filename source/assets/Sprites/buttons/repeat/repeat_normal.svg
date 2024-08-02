@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20.000002mm"
+   height="15.000005mm"
+   viewBox="0 0 20.000002 15.000005"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="Code Slot Spritesheet.svg"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="287.79245"
+     inkscape:cy="450.07345"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" /><defs
+     id="defs1" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-54.999997,-89.999997)"><rect
+       style="fill:#1b998b;fill-opacity:1;stroke-width:0.00049233;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect1-2-4"
+       width="20"
+       height="15"
+       x="55"
+       y="90"
+       ry="4.3014708" /><path
+       d="m 64.821856,92.500001 c 0.298543,-1.52e-4 0.599874,0.02558 0.900929,0.07864 2.140879,0.377512 3.821028,2.057662 4.198541,4.19854 0.377462,2.140904 -0.626733,4.294389 -2.509396,5.381349 -0.823668,0.47555 -1.740049,0.70342 -2.649822,0.69229 -1.169723,-0.0143 -2.328517,-0.42375 -3.26525,-1.2098 l 0.775251,-0.92382 c 1.28015,1.07412 3.089647,1.23242 4.536832,0.39691 1.44716,-0.83552 2.214872,-2.481826 1.924697,-4.127479 -0.290201,-1.645652 -1.574672,-2.930149 -3.22035,-3.220299 -1.297889,-0.228845 -2.596054,0.200502 -3.496732,1.102059 l 1.199522,1.199447 H 60 v -3.216079 l 1.164321,1.164371 c 0.965275,-0.964321 2.282159,-1.515376 3.657535,-1.516129 z"
+       fill="#ffffff"
+       fill-opacity="1"
+       id="path1-86"
+       style="stroke-width:0.0251256" /></g></svg>

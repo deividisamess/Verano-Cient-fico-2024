@@ -1,0 +1,148 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0pylewpc0pxo"]
+
+[ext_resource type="PackedScene" uid="uid://cbvmdk258faqn" path="res://Prefabs/code_blocks/function_blocks.tscn" id="1_yire6"]
+[ext_resource type="Texture2D" uid="uid://c5trwok1s5iec" path="res://assets/Sprites/tiles/danger_tile.png" id="2_7nq8v"]
+[ext_resource type="FontFile" uid="uid://s0liaxtkw8pv" path="res://assets/Fonts/Oswald-VariableFont_wght.ttf" id="2_j41j6"]
+[ext_resource type="Script" path="res://Prefabs/code_blocks/if_blocks.gd" id="2_si0t5"]
+[ext_resource type="Texture2D" uid="uid://dc6q61lsx01p6" path="res://assets/Sprites/tiles/up_tile.png" id="5_glojp"]
+[ext_resource type="Texture2D" uid="uid://diuuidu3vqtiv" path="res://assets/Sprites/tiles/down_tile.png" id="6_rwqjk"]
+
+[node name="If Blocks" instance=ExtResource("1_yire6")]
+script = ExtResource("2_si0t5")
+size = 3
+type = 1
+
+[node name="Overlay" parent="." index="1"]
+layer_0/modulate = Color(0.556863, 0.231373, 0.27451, 1)
+
+[node name="Control" parent="Overlay" index="0"]
+offset_right = 1209.0
+
+[node name="function" parent="Overlay/Control/LabelControl" index="0"]
+text = "Si El Siguiente
+Bloque es:"
+
+[node name="TileSelect" type="Control" parent="Overlay/Control" index="1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -567.974
+offset_top = -75.0
+offset_right = -277.974
+offset_bottom = 76.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Overlay/Control/TileSelect" index="0"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 40.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j41j6")
+theme_override_font_sizes/font_size = 50
+text = "bloque = "
+horizontal_alignment = 1
+
+[node name="tile" type="OptionButton" parent="Overlay/Control/TileSelect" index="1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -52.5
+offset_bottom = 56.5
+grow_horizontal = 0
+grow_vertical = 2
+icon_alignment = 1
+expand_icon = true
+item_count = 3
+selected = 0
+popup/item_0/text = ""
+popup/item_0/icon = ExtResource("2_7nq8v")
+popup/item_0/id = 0
+popup/item_1/text = ""
+popup/item_1/icon = ExtResource("5_glojp")
+popup/item_1/id = 1
+popup/item_2/text = ""
+popup/item_2/icon = ExtResource("6_rwqjk")
+popup/item_2/id = 2
+
+[node name="ColorRect" type="ColorRect" parent="Overlay/Control/TileSelect" index="2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 143.0
+offset_bottom = -34.0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="BehaviourSelect" type="Control" parent="Overlay/Control" index="2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -75.5
+offset_bottom = 75.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Overlay/Control/BehaviourSelect" index="0"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 40.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j41j6")
+theme_override_font_sizes/font_size = 50
+text = " : "
+horizontal_alignment = 1
+
+[node name="behaviour" type="OptionButton" parent="Overlay/Control/BehaviourSelect" index="1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -230.989
+offset_top = -52.5
+offset_right = -10.989
+offset_bottom = 56.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_j41j6")
+theme_override_font_sizes/font_size = 50
+icon_alignment = 1
+expand_icon = true
+item_count = 2
+selected = 0
+popup/item_0/text = "Espera"
+popup/item_0/id = 0
+popup/item_1/text = "Camina"
+popup/item_1/id = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Mouse Detect" to="." method="_on_mouse_detect_mouse_entered"]
+[connection signal="mouse_exited" from="Mouse Detect" to="." method="_on_mouse_detect_mouse_exited"]

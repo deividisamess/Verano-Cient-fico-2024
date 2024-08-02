@@ -1,0 +1,318 @@
+[gd_scene load_steps=17 format=3 uid="uid://vl0obos7fnme"]
+
+[ext_resource type="Script" path="res://Scenes/Niveles/nivel_7.gd" id="1_f8i2h"]
+[ext_resource type="Script" path="res://Scenes/Niveles/game_manager.gd" id="1_x0ebe"]
+[ext_resource type="Texture2D" uid="uid://bm44bbna6psv4" path="res://assets/Imagenes/Green.png" id="2_3bkdg"]
+[ext_resource type="PackedScene" uid="uid://dhqd1btrh2wln" path="res://Prefabs/ui/ui.tscn" id="3_yavcg"]
+[ext_resource type="PackedScene" uid="uid://jtbatprb7t4n" path="res://Prefabs/scene_objects/stage.tscn" id="4_27a0b"]
+[ext_resource type="PackedScene" uid="uid://cc7mbmcybef3r" path="res://Prefabs/scene_objects/player.tscn" id="5_eaycw"]
+[ext_resource type="PackedScene" uid="uid://dwc1j5ga8phnm" path="res://Prefabs/scene_objects/tiles/down_tile.tscn" id="5_gptc1"]
+[ext_resource type="PackedScene" uid="uid://cc77qhr0jatn3" path="res://Prefabs/scene_objects/tiles/up_tile.tscn" id="6_5jdr7"]
+[ext_resource type="PackedScene" uid="uid://6cnueqpr4wab" path="res://Prefabs/scene_objects/crash.tscn" id="6_qbk4b"]
+[ext_resource type="PackedScene" uid="uid://dxdrwv2egxqe1" path="res://Prefabs/scene_objects/tiles/static_obstacle.tscn" id="7_gywsf"]
+[ext_resource type="PackedScene" uid="uid://bbbixe583vglj" path="res://Prefabs/scene_objects/tiles/goal.tscn" id="7_m2ix4"]
+[ext_resource type="PackedScene" uid="uid://ccrwai0x8365w" path="res://Prefabs/scene_objects/tiles/star.tscn" id="9_g3xkm"]
+
+[sub_resource type="Animation" id="Animation_41dno"]
+resource_name = "goal_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpTile:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UpTile:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DownTile:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DownTile:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Goal:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(540, 280), Vector2(540, 600)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Obstacle:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(540, 600), Vector2(540, 280)]
+}
+
+[sub_resource type="Animation" id="Animation_dtarr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpTile:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UpTile:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DownTile:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DownTile:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Goal:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(540, 280)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Obstacle:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(540, 600)]
+}
+
+[sub_resource type="Animation" id="Animation_k6a0w"]
+resource_name = "goal_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpTile:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UpTile:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DownTile:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DownTile:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Goal:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(540, 600), Vector2(540, 280)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Obstacle:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(540, 280), Vector2(540, 600)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8du3s"]
+_data = {
+"RESET": SubResource("Animation_dtarr"),
+"goal_down": SubResource("Animation_k6a0w"),
+"goal_up": SubResource("Animation_41dno")
+}
+
+[node name="Nivel7" type="Node"]
+script = ExtResource("1_f8i2h")
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stars")]
+unique_name_in_owner = true
+script = ExtResource("1_x0ebe")
+stars = NodePath("../SceneObjects/Stars")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3bkdg")
+stretch_mode = 1
+
+[node name="UI" parent="." node_paths=PackedStringArray("player", "goal") instance=ExtResource("3_yavcg")]
+player = NodePath("../SceneObjects/Player")
+label_text = "Stuk 7"
+type_ui = 1
+goal = NodePath("../SceneObjects/Goal")
+
+[node name="SceneObjects" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SceneObjects"]
+libraries = {
+"": SubResource("AnimationLibrary_8du3s")
+}
+autoplay = "goal_up"
+next/goal_up = &"goal_down"
+next/goal_down = &"goal_up"
+
+[node name="TileMap" parent="SceneObjects" instance=ExtResource("4_27a0b")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(196614, 0, 8, 196615, 0, 8, 196616, 0, 8, 262152, 0, 8, 393224, 0, 8, 327689, 0, 8, 196618, 327680, 1, 262154, 0, 8, 327690, 0, 8, 327691, 0, 8, 131084, 0, 8, 196620, 0, 8, 262156, 0, 8, 327692, 0, 8, 393228, 327680, 1, 65540, 0, 8, 65541, 0, 8, 65542, 0, 8, 65543, 0, 8, 65544, 0, 8, 65545, 0, 8, 65546, 0, 8, 65547, 0, 8, 65548, 0, 8, 458760, 0, 8, 458759, 0, 8, 458758, 0, 8, 9, 327680, 1)
+
+[node name="UpTile" parent="SceneObjects" instance=ExtResource("6_5jdr7")]
+position = Vector2(780, 440)
+
+[node name="DownTile" parent="SceneObjects" instance=ExtResource("5_gptc1")]
+position = Vector2(780, 440)
+
+[node name="Obstacle" parent="SceneObjects" instance=ExtResource("7_gywsf")]
+position = Vector2(540, 600)
+
+[node name="Player" parent="SceneObjects" instance=ExtResource("5_eaycw")]
+unique_name_in_owner = true
+position = Vector2(459, 92)
+
+[node name="Crash" parent="SceneObjects" instance=ExtResource("6_qbk4b")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(4, 131074, 2, 5, 131074, 2, 6, 131074, 2, 7, 131074, 2, 8, 131074, 2, 10, 131074, 2, 11, 131074, 2, 12, 131074, 2, 65539, 131074, 2, 131075, 131074, 2, 458756, 131074, 2, 458761, 131074, 2, 458763, 131074, 2, 458764, 131074, 2, 393229, 131074, 2, 327693, 131074, 2, 262157, 131074, 2, 196621, 131074, 2, 131085, 131074, 2, 65549, 131074, 2, 262148, 131074, 2, 327684, 131074, 2, 393220, 131074, 2, 262149, 131074, 2, 327685, 131074, 2, 393221, 131074, 2, 262150, 131074, 2, 327686, 131074, 2, 393222, 131074, 2, 262151, 131074, 2, 327687, 131074, 2, 393223, 131074, 2, 524292, 131074, 2, 524293, 131074, 2, 524294, 131074, 2, 524295, 131074, 2, 524296, 131074, 2, 524297, 131074, 2, 393225, 131074, 2, 393226, 131074, 2, 393227, 131074, 2, 458765, 131074, 2, 13, 131074, 2, -65526, 131074, 2, -65527, 131074, 2, -65528, 131074, 2, 3, 131074, 2, 131076, 131074, 2, 131077, 131074, 2, 131078, 131074, 2, 131079, 131074, 2, 131080, 131074, 2, 131081, 131074, 2, 196617, 131074, 2, 262153, 131074, 2, 262155, 131074, 2, 196619, 131074, 2, 131083, 131074, 2, 196612, 131074, 2)
+
+[node name="Goal" parent="SceneObjects" instance=ExtResource("7_m2ix4")]
+position = Vector2(540, 280)
+next_level = "res://Scenes/Niveles/nivel_8.tscn"
+
+[node name="Stars" type="Node" parent="SceneObjects"]
+
+[node name="Star" parent="SceneObjects/Stars" instance=ExtResource("9_g3xkm")]
+position = Vector2(1100, 520)
+
+[node name="Star2" parent="SceneObjects/Stars" instance=ExtResource("9_g3xkm")]
+position = Vector2(940, 280)
+
+[node name="Star3" parent="SceneObjects/Stars" instance=ExtResource("9_g3xkm")]
+position = Vector2(860, 40)
+
+[connection signal="player_stepping_into" from="SceneObjects/Player" to="." method="_on_player_player_stepping_into"]

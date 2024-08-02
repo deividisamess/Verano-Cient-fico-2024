@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://c858ramaofsqd"]
+
+[ext_resource type="Script" path="res://Scenes/Niveles/niveles.gd" id="1_5y8kd"]
+[ext_resource type="Texture2D" uid="uid://bm44bbna6psv4" path="res://assets/Imagenes/Green.png" id="2_lu7m6"]
+[ext_resource type="Texture2D" uid="uid://bj2o4v2orp787" path="res://assets/Imagenes/Flecha1.jpg" id="3_f5d13"]
+[ext_resource type="PackedScene" uid="uid://cc7mbmcybef3r" path="res://Prefabs/player1.tscn" id="5_v2ut4"]
+[ext_resource type="PackedScene" uid="uid://jtbatprb7t4n" path="res://Prefabs/stage.tscn" id="6_2gme5"]
+[ext_resource type="PackedScene" uid="uid://b3g2kh38hf3ev" path="res://Prefabs/ui_controls_move.tscn" id="7_cwslh"]
+[ext_resource type="PackedScene" uid="uid://bbbixe583vglj" path="res://Prefabs/goal.tscn" id="8_topgu"]
+[ext_resource type="PackedScene" uid="uid://6cnueqpr4wab" path="res://Prefabs/crash.tscn" id="9_ne448"]
+
+[node name="Nivel3" type="Node"]
+script = ExtResource("1_5y8kd")
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lu7m6")
+stretch_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 487.0
+offset_top = -292.0
+offset_right = 537.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_f5d13")
+
+[node name="UI Controls" parent="UI" instance=ExtResource("7_cwslh")]
+label_text = "Stuk 3"
+
+[node name="SceneObjects" type="Node" parent="."]
+
+[node name="TileMap" parent="SceneObjects" instance=ExtResource("6_2gme5")]
+z_index = 1
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(131076, 0, 5, 196612, 0, 5, 262148, 0, 5, 327684, 0, 5, 393220, 0, 5, 131078, 0, 5, 196614, 0, 5, 262150, 0, 5, 327686, 0, 5, 327687, 0, 5, 327688, 0, 5, 196617, 0, 5, 327689, 0, 5, 196618, 0, 5, 262154, 0, 5, 327690, 0, 5, 131084, 0, 5, 196620, 0, 5, 262156, 0, 5, 327692, 0, 5, 393228, 0, 5, 65540, 0, 5, 65542, 0, 5, 65543, 0, 5, 65544, 0, 5, 65545, 0, 5, 65546, 0, 5, 65547, 0, 5, 65548, 0, 5, 458756, 0, 5, 458757, 0, 5, 458758, 0, 5, 458759, 0, 5, 458760, 0, 5, 458761, 0, 5, 458762, 0, 5, 458763, 0, 5, 458764, 0, 5)
+
+[node name="CharacterBody2D" parent="SceneObjects" instance=ExtResource("5_v2ut4")]
+position = Vector2(464, 98)
+
+[node name="Crash" parent="SceneObjects" instance=ExtResource("9_ne448")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(4, 131074, 2, 5, 131074, 2, 6, 131074, 2, 7, 131074, 2, 8, 131074, 2, 9, 131074, 2, 10, 131074, 2, 11, 131074, 2, 12, 131074, 2, 65539, 131074, 2, 131075, 131074, 2, 196611, 131074, 2, 262147, 131074, 2, 327683, 131074, 2, 393219, 131074, 2, 393229, 131074, 2, 327693, 131074, 2, 262157, 131074, 2, 196621, 131074, 2, 131085, 131074, 2, 65549, 131074, 2, 524291, 131074, 2, 458755, 131074, 2, 3, 131074, 2, 13, 131074, 2, 458765, 131074, 2, 524301, 131074, 2, 524300, 131074, 2, 524299, 131074, 2, 524298, 131074, 2, 524297, 131074, 2, 524296, 131074, 2, 524295, 131074, 2, 524294, 131074, 2, 524293, 131074, 2, 524292, 131074, 2, 65541, 131074, 2, 131077, 131074, 2, 196613, 131074, 2, 262149, 131074, 2, 327685, 131074, 2, 393221, 131074, 2, 393222, 131074, 2, 393223, 131074, 2, 393224, 131074, 2, 393225, 131074, 2, 393226, 131074, 2, 393227, 131074, 2, 327691, 131074, 2, 262155, 131074, 2, 196619, 131074, 2, 131083, 131074, 2, 131082, 131074, 2, 131081, 131074, 2, 131080, 131074, 2, 131079, 131074, 2, 196615, 131074, 2, 262151, 131074, 2, 262152, 131074, 2, 262153, 131074, 2)
+
+[node name="Goal" parent="SceneObjects" instance=ExtResource("8_topgu")]
+position = Vector2(780, 280)
+next_level = "res://Scenes/Niveles/nivel_4.tscn"
+
+[connection signal="pressed" from="UI/TextureButton" to="." method="_on_texture_button_pressed"]

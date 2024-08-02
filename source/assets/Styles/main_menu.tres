@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dp5fgdb12aagx"]
+
+[ext_resource type="FontFile" uid="uid://s0liaxtkw8pv" path="res://assets/Fonts/Oswald-VariableFont_wght.ttf" id="1_15tvf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57pa3"]
+bg_color = Color(0.278431, 0.698039, 0.921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vntcu"]
+bg_color = Color(0.6, 0.85098, 0.54902, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 15.0
+expand_margin_top = 40.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[resource]
+default_font = ExtResource("1_15tvf")
+default_font_size = 20
+AcceptDialog/constants/buttons_separation = 10
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_57pa3")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_vntcu")

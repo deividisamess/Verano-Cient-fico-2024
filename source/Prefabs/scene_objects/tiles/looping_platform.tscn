@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7er6j3pryip7"]
+
+[ext_resource type="Texture2D" uid="uid://b1hiytggfhw5f" path="res://assets/Sprites/bloques.png" id="1_6x1lh"]
+[ext_resource type="Script" path="res://Prefabs/scene_objects/tiles/looping_platform.gd" id="1_jnu4w"]
+[ext_resource type="FontFile" uid="uid://s0liaxtkw8pv" path="res://assets/Fonts/Oswald-VariableFont_wght.ttf" id="2_7ipoh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fglxo"]
+size = Vector2(54, 52)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0elm6"]
+bg_color = Color(0.85098, 0.627451, 0.4, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_dmwm3"]
+font = ExtResource("2_7ipoh")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="Looping Platform" type="Area2D"]
+script = ExtResource("1_jnu4w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_6x1lh")
+region_enabled = true
+region_rect = Rect2(103, 4, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fglxo")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0elm6")
+text = "[#]"
+label_settings = SubResource("LabelSettings_dmwm3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

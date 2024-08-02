@@ -1,0 +1,442 @@
+[gd_scene load_steps=17 format=3 uid="uid://brh5umrnh4b1k"]
+
+[ext_resource type="Script" path="res://Scenes/Niveles/nivel_7.gd" id="1_7ph04"]
+[ext_resource type="Script" path="res://Scenes/Niveles/game_manager.gd" id="2_bwjhy"]
+[ext_resource type="Texture2D" uid="uid://bm44bbna6psv4" path="res://assets/Imagenes/Green.png" id="3_3w48i"]
+[ext_resource type="PackedScene" uid="uid://dhqd1btrh2wln" path="res://Prefabs/ui/ui.tscn" id="4_xg0ga"]
+[ext_resource type="PackedScene" uid="uid://jtbatprb7t4n" path="res://Prefabs/scene_objects/stage.tscn" id="5_em30e"]
+[ext_resource type="PackedScene" uid="uid://cc77qhr0jatn3" path="res://Prefabs/scene_objects/tiles/up_tile.tscn" id="6_4t5p8"]
+[ext_resource type="PackedScene" uid="uid://dwc1j5ga8phnm" path="res://Prefabs/scene_objects/tiles/down_tile.tscn" id="7_24fhn"]
+[ext_resource type="PackedScene" uid="uid://6cnueqpr4wab" path="res://Prefabs/scene_objects/crash.tscn" id="8_sa06y"]
+[ext_resource type="PackedScene" uid="uid://bbbixe583vglj" path="res://Prefabs/scene_objects/tiles/goal.tscn" id="9_h2nua"]
+[ext_resource type="PackedScene" uid="uid://cc7mbmcybef3r" path="res://Prefabs/scene_objects/player.tscn" id="10_8uqi4"]
+[ext_resource type="PackedScene" uid="uid://ccrwai0x8365w" path="res://Prefabs/scene_objects/tiles/star.tscn" id="11_ybqt7"]
+[ext_resource type="PackedScene" uid="uid://cy5kua2x3lktv" path="res://Prefabs/scene_objects/tiles/obstacle.tscn" id="12_0wnt8"]
+
+[sub_resource type="Animation" id="Animation_ibrph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:layer_1/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:layer_2/enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../UpTile:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../UpTile:collision_layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../DownTile:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../DownTile:collision_layer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Crash:layer_1/enabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Crash:layer_2/enabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Stars/Star3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(540, 440)]
+}
+
+[sub_resource type="Animation" id="Animation_grx0k"]
+resource_name = "path1"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:layer_1/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:layer_2/enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../UpTile:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../UpTile:collision_layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../DownTile:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../DownTile:collision_layer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Crash:layer_1/enabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Crash:layer_2/enabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Stars/Star3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(540, 440)]
+}
+
+[sub_resource type="Animation" id="Animation_h2jic"]
+resource_name = "path2"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:layer_1/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:layer_2/enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../UpTile:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../UpTile:collision_layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../DownTile:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../DownTile:collision_layer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Crash:layer_1/enabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Crash:layer_2/enabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Stars/Star3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(860, 440)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_alqty"]
+_data = {
+"RESET": SubResource("Animation_ibrph"),
+"path1": SubResource("Animation_grx0k"),
+"path2": SubResource("Animation_h2jic")
+}
+
+[node name="Nivel10" type="Node"]
+script = ExtResource("1_7ph04")
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stars")]
+unique_name_in_owner = true
+script = ExtResource("2_bwjhy")
+stars = NodePath("../SceneObjects/Stars")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3w48i")
+stretch_mode = 1
+
+[node name="UI" parent="." node_paths=PackedStringArray("player", "goal") instance=ExtResource("4_xg0ga")]
+player = NodePath("../SceneObjects/Player")
+label_text = "Stuk 10"
+type_ui = 1
+goal = NodePath("../SceneObjects/Goal")
+
+[node name="SceneObjects" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SceneObjects"]
+root_node = NodePath("../TileMap")
+libraries = {
+"": SubResource("AnimationLibrary_alqty")
+}
+autoplay = "path1"
+next/path1 = &"path2"
+next/path2 = &"path1"
+
+[node name="TileMap" parent="SceneObjects" instance=ExtResource("5_em30e")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(131079, 0, 8, 327687, 0, 8, 393223, 0, 8, 65540, 0, 8, 65541, 0, 8, 65542, 0, 8, 65543, 0, 8, 65544, 327680, 1, 458759, 0, 8, 458760, 0, 8, 458762, 0, 8, 458763, 0, 8, 458761, 0, 8, 458758, 327680, 1)
+layer_1/name = "path1"
+layer_1/tile_data = PackedInt32Array(65544, 327680, 2, 196614, 0, 8, 327686, 0, 8, 262150, 0, 8, 327685, 327680, 1)
+layer_2/name = "path2"
+layer_2/tile_data = PackedInt32Array(327688, 0, 8, 458758, 327680, 3, 196616, 0, 8, 262152, 0, 8, 327689, 327680, 1)
+
+[node name="UpTile" parent="SceneObjects" instance=ExtResource("6_4t5p8")]
+position = Vector2(700, 280)
+collision_mask = 2
+
+[node name="DownTile" parent="SceneObjects" instance=ExtResource("7_24fhn")]
+visible = false
+position = Vector2(700, 280)
+collision_mask = 2
+
+[node name="Crash" parent="SceneObjects" instance=ExtResource("8_sa06y")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(4, 131074, 2, 5, 131074, 2, 6, 131074, 2, 7, 131074, 2, 8, 131074, 2, 9, 131074, 2, 65539, 131074, 2, 131075, 131074, 2, 458757, 131074, 2, 393229, 131074, 2, 131076, 131074, 2, 131077, 131074, 2, 131078, 131074, 2, 393222, 131074, 2, 393221, 131074, 2, 524293, 131074, 2, 524294, 131074, 2, 524295, 131074, 2, 524296, 131074, 2, 524297, 131074, 2, 524298, 131074, 2, 524299, 131074, 2, 524300, 131074, 2, 524301, 131074, 2, 458765, 131074, 2, 393228, 131074, 2, 393227, 131074, 2, 393226, 131074, 2, 393225, 131074, 2, 393224, 131074, 2, 131080, 131074, 2, 131081, 131074, 2, 65545, 131074, 2, 3, 131074, 2, 262151, 131074, 2)
+layer_1/name = "path1"
+layer_1/tile_data = PackedInt32Array(327684, 131074, 2, 262149, 131074, 2, 196613, 131074, 2, 196616, 131074, 2, 327688, 131074, 2)
+layer_2/name = "path2"
+layer_2/tile_data = PackedInt32Array(327686, 131074, 2, 262150, 131074, 2, 196614, 131074, 2, 327690, 131074, 2, 262153, 131074, 2, 196617, 131074, 2)
+
+[node name="Goal" parent="SceneObjects" instance=ExtResource("9_h2nua")]
+position = Vector2(1100, 600)
+next_level = "res://Scenes/Niveles/nivel_11.tscn"
+
+[node name="Player" parent="SceneObjects" instance=ExtResource("10_8uqi4")]
+unique_name_in_owner = true
+position = Vector2(460, 94)
+
+[node name="Stars" type="Node" parent="SceneObjects"]
+
+[node name="Star" parent="SceneObjects/Stars" instance=ExtResource("11_ybqt7")]
+position = Vector2(780, 120)
+
+[node name="Star2" parent="SceneObjects/Stars" instance=ExtResource("11_ybqt7")]
+position = Vector2(620, 600)
+
+[node name="Star3" parent="SceneObjects/Stars" instance=ExtResource("11_ybqt7")]
+position = Vector2(540, 440)
+
+[node name="Obstacles" type="Node" parent="SceneObjects"]
+
+[node name="Obstacle" parent="SceneObjects/Obstacles" instance=ExtResource("12_0wnt8")]
+position = Vector2(860, 600)
+
+[connection signal="player_stepping_into" from="SceneObjects/Player" to="." method="_on_player_player_stepping_into"]

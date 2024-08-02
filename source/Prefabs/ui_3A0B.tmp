@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://tktqh3bv8boc"]
+
+[ext_resource type="Script" path="res://Scripts/ui_controls.gd" id="1_d42hc"]
+[ext_resource type="PackedScene" uid="uid://cmkt1u2kgwdfl" path="res://Prefabs/buttons.tscn" id="1_ftnde"]
+[ext_resource type="PackedScene" uid="uid://2l62ut4roo1g" path="res://Prefabs/platforms.tscn" id="2_v7q4w"]
+[ext_resource type="PackedScene" uid="uid://boh4atyw3oniv" path="res://Prefabs/button_code.tscn" id="3_tq0v2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b0ac"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="UI Controls" type="Panel"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 350.0
+offset_bottom = 2.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0b0ac")
+script = ExtResource("1_d42hc")
+
+[node name="buttons" parent="." instance=ExtResource("1_ftnde")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -300.0
+offset_right = 15.5
+offset_bottom = -245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Stuk 3"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_top = 49.0
+offset_right = -53.0
+offset_bottom = 80.0
+grow_horizontal = 0
+text = "►"
+
+[node name="Buttons Code" parent="." instance=ExtResource("3_tq0v2")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.5
+offset_top = -83.0
+offset_right = 20.5
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ScrollBlocks" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -184.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="ScrollBlocks"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollBlocks/Control"]
+custom_minimum_size = Vector2(350, 900)
+layout_mode = 2
+offset_right = 350.0
+offset_bottom = 900.0
+
+[node name="platforms" parent="ScrollBlocks/Control/VBoxContainer" instance=ExtResource("2_v7q4w")]
+
+[node name="BlockContainer" type="VBoxContainer" parent="ScrollBlocks/Control"]
+custom_minimum_size = Vector2(350, 900)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Blocks" type="Node2D" parent="ScrollBlocks/Control/BlockContainer"]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

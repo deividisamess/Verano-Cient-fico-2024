@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwc1j5ga8phnm"]
+
+[ext_resource type="Texture2D" uid="uid://diuuidu3vqtiv" path="res://assets/Sprites/tiles/down_tile.png" id="1_voufb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p7vo"]
+size = Vector2(68, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00sxd"]
+size = Vector2(68, 68)
+
+[node name="DownTile" type="StaticBody2D" groups=["down_tile"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_voufb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7p7vo")
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+shape = SubResource("RectangleShape2D_00sxd")

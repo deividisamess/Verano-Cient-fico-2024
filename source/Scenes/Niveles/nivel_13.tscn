@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://cu2pn17mwee5e"]
+
+[ext_resource type="Script" path="res://Scenes/Niveles/game_manager.gd" id="1_a1oqt"]
+[ext_resource type="Texture2D" uid="uid://bm44bbna6psv4" path="res://assets/Imagenes/Green.png" id="2_samuj"]
+[ext_resource type="PackedScene" uid="uid://dhqd1btrh2wln" path="res://Prefabs/ui/ui.tscn" id="3_vbb1o"]
+[ext_resource type="PackedScene" uid="uid://jtbatprb7t4n" path="res://Prefabs/scene_objects/stage.tscn" id="4_brk8w"]
+[ext_resource type="PackedScene" uid="uid://cc7mbmcybef3r" path="res://Prefabs/scene_objects/player.tscn" id="5_1w6pe"]
+[ext_resource type="PackedScene" uid="uid://6cnueqpr4wab" path="res://Prefabs/scene_objects/crash.tscn" id="6_c57fl"]
+[ext_resource type="PackedScene" uid="uid://bbbixe583vglj" path="res://Prefabs/scene_objects/tiles/goal.tscn" id="7_lad06"]
+[ext_resource type="PackedScene" uid="uid://ccrwai0x8365w" path="res://Prefabs/scene_objects/tiles/star.tscn" id="8_ugvnn"]
+[ext_resource type="PackedScene" uid="uid://cm8gmofiy8goc" path="res://Prefabs/scene_objects/tiles/lock_obstacle.tscn" id="9_2j037"]
+[ext_resource type="PackedScene" uid="uid://c7er6j3pryip7" path="res://Prefabs/scene_objects/tiles/looping_platform.tscn" id="10_i1rfq"]
+[ext_resource type="PackedScene" uid="uid://cy5kua2x3lktv" path="res://Prefabs/scene_objects/tiles/obstacle.tscn" id="11_edb00"]
+
+[node name="Nivel13" type="Node"]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stars")]
+unique_name_in_owner = true
+script = ExtResource("1_a1oqt")
+stars = NodePath("../SceneObjects/Stars")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_samuj")
+stretch_mode = 1
+
+[node name="UI" parent="." node_paths=PackedStringArray("player", "goal") instance=ExtResource("3_vbb1o")]
+player = NodePath("../SceneObjects/Player")
+label_text = "Stuk 13"
+type_ui = 2
+goal = NodePath("../SceneObjects/Goal")
+
+[node name="SceneObjects" type="Node" parent="."]
+
+[node name="TileMap" parent="SceneObjects" instance=ExtResource("4_brk8w")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(131079, 0, 0, 196615, 0, 0, 327687, 0, 0, 393223, 327680, 1, 196616, 0, 0, 327688, 0, 0, 131081, 0, 0, 327689, 0, 0, 196618, 0, 0, 327690, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 327680, 1)
+
+[node name="Player" parent="SceneObjects" instance=ExtResource("5_1w6pe")]
+unique_name_in_owner = true
+position = Vector2(461, 88)
+
+[node name="Crash" parent="SceneObjects" instance=ExtResource("6_c57fl")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(4, 131074, 2, 5, 131074, 2, 6, 131074, 2, 7, 131074, 2, 8, 131074, 2, 9, 131074, 2, 10, 131074, 2, 11, 131074, 2, 65539, 131074, 2, 131075, 131074, 2, 458758, 131074, 2, 458759, 131074, 2, 458760, 131074, 2, 327685, 131074, 2, 262149, 131074, 2, 262150, 131074, 2, 262151, 131074, 2, 262152, 131074, 2, 262153, 131074, 2, 262154, 131074, 2, 393221, 131074, 2, 393222, 131074, 2, 393224, 131074, 2, 393225, 131074, 2, 393226, 131074, 2, 393227, 131074, 2, 393228, 131074, 2, 327692, 131074, 2, 262156, 131074, 2, 196620, 131074, 2, 131084, 131074, 2, 131083, 131074, 2, 131082, 131074, 2, 131080, 131074, 2, 65547, 131074, 2, 3, 131074, 2, 131076, 131074, 2, 131077, 131074, 2, 131078, 131074, 2, 196614, 131074, 2)
+
+[node name="Goal" parent="SceneObjects" instance=ExtResource("7_lad06")]
+position = Vector2(620, 440)
+next_level = "res://Scenes/Niveles/nivel_14.tscn"
+
+[node name="Stars" type="Node" parent="SceneObjects"]
+
+[node name="Star" parent="SceneObjects/Stars" instance=ExtResource("8_ugvnn")]
+position = Vector2(700, 520)
+
+[node name="Star2" parent="SceneObjects/Stars" instance=ExtResource("8_ugvnn")]
+position = Vector2(940, 120)
+
+[node name="Obstacles" type="Node" parent="SceneObjects"]
+
+[node name="Lock Obstacle" parent="SceneObjects/Obstacles" node_paths=PackedStringArray("loop_platform") instance=ExtResource("9_2j037")]
+position = Vector2(940, 280)
+loop_platform = NodePath("../Looping Platform")
+
+[node name="Looping Platform" parent="SceneObjects/Obstacles" instance=ExtResource("10_i1rfq")]
+position = Vector2(860, 280)
+expected_moves = "5"
+
+[node name="Obstacle" parent="SceneObjects/Obstacles" instance=ExtResource("11_edb00")]
+position = Vector2(780, 440)
+
+[connection signal="reached_zero" from="SceneObjects/Obstacles/Looping Platform" to="." method="_on_looping_platform_reached_zero"]

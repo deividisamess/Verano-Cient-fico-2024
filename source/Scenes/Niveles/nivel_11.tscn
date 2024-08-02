@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://cllbtx84peghc"]
+
+[ext_resource type="Script" path="res://Scenes/Niveles/game_manager.gd" id="1_ah6kl"]
+[ext_resource type="Texture2D" uid="uid://bm44bbna6psv4" path="res://assets/Imagenes/Green.png" id="2_wt10t"]
+[ext_resource type="PackedScene" uid="uid://dhqd1btrh2wln" path="res://Prefabs/ui/ui.tscn" id="3_h7mc5"]
+[ext_resource type="PackedScene" uid="uid://jtbatprb7t4n" path="res://Prefabs/scene_objects/stage.tscn" id="4_fxjpn"]
+[ext_resource type="PackedScene" uid="uid://cc7mbmcybef3r" path="res://Prefabs/scene_objects/player.tscn" id="5_ckp1n"]
+[ext_resource type="PackedScene" uid="uid://6cnueqpr4wab" path="res://Prefabs/scene_objects/crash.tscn" id="6_8arve"]
+[ext_resource type="PackedScene" uid="uid://bbbixe583vglj" path="res://Prefabs/scene_objects/tiles/goal.tscn" id="7_ynta1"]
+[ext_resource type="PackedScene" uid="uid://ccrwai0x8365w" path="res://Prefabs/scene_objects/tiles/star.tscn" id="8_q0rce"]
+[ext_resource type="PackedScene" uid="uid://c7er6j3pryip7" path="res://Prefabs/scene_objects/tiles/looping_platform.tscn" id="10_5rgms"]
+[ext_resource type="PackedScene" uid="uid://cm8gmofiy8goc" path="res://Prefabs/scene_objects/tiles/lock_obstacle.tscn" id="11_081rh"]
+
+[node name="Nivel11" type="Node"]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stars")]
+unique_name_in_owner = true
+script = ExtResource("1_ah6kl")
+stars = NodePath("../SceneObjects/Stars")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wt10t")
+stretch_mode = 1
+
+[node name="UI" parent="." node_paths=PackedStringArray("player", "goal") instance=ExtResource("3_h7mc5")]
+player = NodePath("../SceneObjects/Player")
+label_text = "Stuk 11"
+type_ui = 2
+goal = NodePath("../SceneObjects/Goal")
+
+[node name="SceneObjects" type="Node" parent="."]
+
+[node name="TileMap" parent="SceneObjects" instance=ExtResource("4_fxjpn")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 327686, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 196616, 0, 0, 131081, 327680, 1, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0)
+
+[node name="Player" parent="SceneObjects" instance=ExtResource("5_ckp1n")]
+unique_name_in_owner = true
+position = Vector2(541, 168)
+
+[node name="Crash" parent="SceneObjects" instance=ExtResource("6_8arve")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(393229, 131074, 2, 327693, 131074, 2, 262157, 131074, 2, 327684, 131074, 2, 262148, 131074, 2, 196612, 131074, 2, 131076, 131074, 2, 65540, 131074, 2, 65541, 131074, 2, 65542, 131074, 2, 131078, 131074, 2, 196614, 131074, 2, 262150, 131074, 2, 393220, 131074, 2, 393221, 131074, 2, 393222, 131074, 2, 393223, 131074, 2, 393224, 131074, 2, 393225, 131074, 2, 393226, 131074, 2, 393227, 131074, 2, 393228, 131074, 2, 262156, 131074, 2, 262155, 131074, 2, 262154, 131074, 2, 196618, 131074, 2, 131082, 131074, 2, 65546, 131074, 2, 65545, 131074, 2, 65544, 131074, 2, 131080, 131074, 2, 131079, 131074, 2, 262152, 131074, 2)
+
+[node name="Goal" parent="SceneObjects" instance=ExtResource("7_ynta1")]
+position = Vector2(1100, 440)
+next_level = "res://Scenes/Niveles/nivel_12.tscn"
+
+[node name="Stars" type="Node" parent="SceneObjects"]
+
+[node name="Star" parent="SceneObjects/Stars" instance=ExtResource("8_q0rce")]
+position = Vector2(860, 200)
+
+[node name="Looping Platform" parent="SceneObjects" instance=ExtResource("10_5rgms")]
+position = Vector2(780, 440)
+expected_moves = "2"
+
+[node name="Lock Obstacle" parent="SceneObjects" node_paths=PackedStringArray("loop_platform") instance=ExtResource("11_081rh")]
+position = Vector2(940, 440)
+loop_platform = NodePath("../Looping Platform")
+
+[connection signal="reached_zero" from="SceneObjects/Looping Platform" to="." method="_on_looping_platform_reached_zero"]

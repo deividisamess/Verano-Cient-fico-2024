@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20mm"
+   height="15.000005mm"
+   viewBox="0 0 20 15.000005"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="Code Slot Spritesheet.svg"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="287.79245"
+     inkscape:cy="450.07345"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" /><defs
+     id="defs1" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-5.0000001,-89.999997)"><rect
+       style="fill:#0079ff;fill-opacity:1;stroke-width:0.00049233;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect1"
+       width="20"
+       height="15"
+       x="5"
+       y="90"
+       ry="4.3014708" /><path
+       d="m 15,92.5 -2.042838,2.042842 h 1.53214 v 2.446461 H 12.042839 V 95.457166 L 10,97.5 12.042839,99.54284 V 98.0107 h 2.446463 v 2.44647 h -1.53214 L 15,102.5 l 2.042839,-2.04283 h -1.53214 V 98.0107 h 2.446463 v 1.53214 L 20,97.5 17.957162,95.457166 v 1.532137 h -2.446463 v -2.446461 h 1.53214 z"
+       fill="#ffffff"
+       fill-opacity="1"
+       id="path1-8"
+       style="stroke-width:0.0225703" /></g></svg>

@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=3 uid="uid://c858ramaofsqd"]
+
+[ext_resource type="Script" path="res://Scripts/nivel_3.gd" id="1_0r7pf"]
+[ext_resource type="Texture2D" uid="uid://bm44bbna6psv4" path="res://Imagenes/Green.png" id="2_lu7m6"]
+[ext_resource type="Texture2D" uid="uid://bj2o4v2orp787" path="res://Imagenes/Flecha1.jpg" id="3_f5d13"]
+[ext_resource type="PackedScene" uid="uid://cc7mbmcybef3r" path="res://Prefabs/player1.tscn" id="5_v2ut4"]
+[ext_resource type="PackedScene" uid="uid://jtbatprb7t4n" path="res://Prefabs/tile_map.tscn" id="6_2gme5"]
+[ext_resource type="PackedScene" uid="uid://cmkt1u2kgwdfl" path="res://Prefabs/buttons.tscn" id="6_int5v"]
+[ext_resource type="PackedScene" uid="uid://boh4atyw3oniv" path="res://Prefabs/button_code.tscn" id="7_107rc"]
+[ext_resource type="PackedScene" uid="uid://dg3j2eroh35ic" path="res://Prefabs/platform.tscn" id="8_ek021"]
+[ext_resource type="PackedScene" uid="uid://6cnueqpr4wab" path="res://Prefabs/crash.tscn" id="9_ne448"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b0ac"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Nivel3" type="Node"]
+script = ExtResource("1_0r7pf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lu7m6")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 283.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0b0ac")
+
+[node name="buttons" parent="Panel" instance=ExtResource("6_int5v")]
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -300.0
+offset_right = 15.5
+offset_bottom = -245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Stuk 3"
+horizontal_alignment = 1
+
+[node name="platforms" type="Node2D" parent="Panel"]
+
+[node name="0" parent="Panel/platforms" instance=ExtResource("8_ek021")]
+position = Vector2(18, 107)
+
+[node name="1" parent="Panel/platforms" instance=ExtResource("8_ek021")]
+position = Vector2(18, 153)
+
+[node name="2" parent="Panel/platforms" instance=ExtResource("8_ek021")]
+position = Vector2(18, 199)
+
+[node name="3" parent="Panel/platforms" instance=ExtResource("8_ek021")]
+position = Vector2(18, 245)
+
+[node name="4" parent="Panel/platforms" instance=ExtResource("8_ek021")]
+position = Vector2(18, 291)
+
+[node name="5" parent="Panel/platforms" instance=ExtResource("8_ek021")]
+position = Vector2(18, 337)
+
+[node name="6" parent="Panel/platforms" instance=ExtResource("8_ek021")]
+position = Vector2(18, 383)
+
+[node name="7" parent="Panel/platforms" instance=ExtResource("8_ek021")]
+position = Vector2(18, 428)
+
+[node name="Play" type="Button" parent="Panel"]
+offset_left = 216.0
+offset_top = 33.0
+offset_right = 238.0
+offset_bottom = 64.0
+text = "►"
+
+[node name="Blocks" type="Node2D" parent="Panel"]
+
+[node name="Buttons Code" parent="Panel" instance=ExtResource("7_107rc")]
+layout_mode = 1
+
+[node name="TileMap" parent="." instance=ExtResource("6_2gme5")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_v2ut4")]
+position = Vector2(364, 98)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 487.0
+offset_top = -292.0
+offset_right = 537.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_f5d13")
+
+[node name="Crash" parent="." instance=ExtResource("9_ne448")]
+
+[connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

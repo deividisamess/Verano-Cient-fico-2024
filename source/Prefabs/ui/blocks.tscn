@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3bwsvmilpj7y"]
+
+[ext_resource type="Script" path="res://Prefabs/ui/blocks.gd" id="1_cn3eg"]
+[ext_resource type="Script" path="res://Prefabs/components/block_list_component.gd" id="2_nieyx"]
+[ext_resource type="Script" path="res://Prefabs/components/block_positions_component.gd" id="3_ye4k7"]
+[ext_resource type="Script" path="res://Prefabs/components/block_spawner_component.gd" id="4_68lde"]
+[ext_resource type="PackedScene" uid="uid://d2lpbdpegsatv" path="res://Prefabs/code_blocks/move_blocks.tscn" id="5_p5tbj"]
+[ext_resource type="PackedScene" uid="uid://d0pylewpc0pxo" path="res://Prefabs/code_blocks/if_blocks.tscn" id="6_ho3rn"]
+[ext_resource type="PackedScene" uid="uid://dy14v2j2sauef" path="res://Prefabs/code_blocks/repeat_blocks.tscn" id="7_5b45j"]
+
+[node name="Blocks" type="Node2D"]
+script = ExtResource("1_cn3eg")
+
+[node name="BlockListComponent" type="Node" parent="." node_paths=PackedStringArray("blocks")]
+script = ExtResource("2_nieyx")
+blocks = NodePath("..")
+
+[node name="BlockPositionsComponent" type="Node" parent="." node_paths=PackedStringArray("blocks", "block_list")]
+script = ExtResource("3_ye4k7")
+blocks = NodePath("..")
+block_list = NodePath("../BlockListComponent")
+
+[node name="BlockSpawnerComponent" type="Node" parent="." node_paths=PackedStringArray("block_list", "block_positions")]
+script = ExtResource("4_68lde")
+MOVE_BLOCKS = ExtResource("5_p5tbj")
+IF_BLOCKS = ExtResource("6_ho3rn")
+REPEAT_BLOCKS = ExtResource("7_5b45j")
+block_list = NodePath("../BlockListComponent")
+block_positions = NodePath("../BlockPositionsComponent")

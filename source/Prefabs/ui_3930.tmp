@@ -1,0 +1,154 @@
+[gd_scene load_steps=18 format=3 uid="uid://tktqh3bv8boc"]
+
+[ext_resource type="Script" path="res://Prefabs/ui_controls.gd" id="1_1atae"]
+[ext_resource type="PackedScene" uid="uid://nnnafj3vl0gd" path="res://Prefabs/trash.tscn" id="2_4380l"]
+[ext_resource type="Texture2D" uid="uid://crpxelb8ddkfk" path="res://Sprites/buttons/move/move_normal.svg" id="2_x3801"]
+[ext_resource type="Texture2D" uid="uid://uxkrnxq3mi8e" path="res://Sprites/buttons/move/move_pressed.svg" id="3_ajyj1"]
+[ext_resource type="Script" path="res://Prefabs/blocks.gd" id="4_8alsh"]
+[ext_resource type="Script" path="res://Prefabs/platforms.gd" id="4_j41su"]
+[ext_resource type="Texture2D" uid="uid://cy7681skqjhc7" path="res://Sprites/buttons/move/move_hover.svg" id="4_rkh2o"]
+[ext_resource type="Texture2D" uid="uid://cprjmkwweyo8v" path="res://Sprites/buttons/if/if_normal.svg" id="5_gi5cp"]
+[ext_resource type="Texture2D" uid="uid://eawgbhxgl5d0" path="res://Sprites/buttons/if/if_pressed.svg" id="6_g6otn"]
+[ext_resource type="Texture2D" uid="uid://dtcyaalpotmj8" path="res://Sprites/buttons/if/if_hover.svg" id="7_ksu7w"]
+[ext_resource type="Texture2D" uid="uid://iijhake7n6a3" path="res://Sprites/buttons/repeat/repeat_normal.svg" id="8_s1mu2"]
+[ext_resource type="Texture2D" uid="uid://ctvo0uy4r4p8s" path="res://Sprites/buttons/repeat/repeat_pressed.svg" id="9_s6vwk"]
+[ext_resource type="Texture2D" uid="uid://0xo08issvb6b" path="res://Sprites/buttons/repeat/repeat_hover.svg" id="10_fhxb6"]
+[ext_resource type="Texture2D" uid="uid://bs76otohdb4gs" path="res://Sprites/buttons/play/play_normal.svg" id="11_828s5"]
+[ext_resource type="Texture2D" uid="uid://b1fkxgxa48x7p" path="res://Sprites/buttons/play/play_pressed.svg" id="12_m6qmy"]
+[ext_resource type="Texture2D" uid="uid://wft0a2efcois" path="res://Sprites/buttons/play/play_hover.svg" id="13_ckmg8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b0ac"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="UI Controls" type="Panel"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 405.0
+offset_bottom = 2.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0b0ac")
+script = ExtResource("1_1atae")
+label_text = null
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.5
+offset_top = 15.0
+offset_right = -48.5
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Stuk"
+horizontal_alignment = 1
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -20.0
+offset_right = 169.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Move Robot" type="TextureButton" parent="Buttons/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x3801")
+texture_pressed = ExtResource("3_ajyj1")
+texture_hover = ExtResource("4_rkh2o")
+
+[node name="If - Else" type="TextureButton" parent="Buttons/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_gi5cp")
+texture_pressed = ExtResource("6_g6otn")
+texture_hover = ExtResource("7_ksu7w")
+
+[node name="Repeat" type="TextureButton" parent="Buttons/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_s1mu2")
+texture_pressed = ExtResource("9_s6vwk")
+texture_hover = ExtResource("10_fhxb6")
+
+[node name="Play" type="TextureButton" parent="Buttons/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_828s5")
+texture_pressed = ExtResource("12_m6qmy")
+texture_hover = ExtResource("13_ckmg8")
+
+[node name="Button" type="Button" parent="Buttons/HBoxContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="ScrollBlocks" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 75.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="ScrollBlocks"]
+custom_minimum_size = Vector2(350, 138)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+mouse_filter = 2
+
+[node name="PlatformContainer" type="VBoxContainer" parent="ScrollBlocks/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="platforms" type="Node2D" parent="ScrollBlocks/Control/PlatformContainer"]
+script = ExtResource("4_j41su")
+
+[node name="BlockContainer" type="VBoxContainer" parent="ScrollBlocks/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blocks" type="Node2D" parent="ScrollBlocks/Control/BlockContainer"]
+script = ExtResource("4_8alsh")
+
+[node name="Trash" parent="ScrollBlocks/Control" instance=ExtResource("2_4380l")]
+position = Vector2(386, 406)
+
+[connection signal="pressed" from="Buttons/HBoxContainer/Move Robot" to="." method="_on_move_robot_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/If - Else" to="." method="_on_if_else_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/Repeat" to="." method="_on_repeat_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7vrn6x4tlpep"]
+
+[ext_resource type="Script" path="res://Scenes/Niveles/game_manager.gd" id="1_38k46"]
+[ext_resource type="Texture2D" uid="uid://bm44bbna6psv4" path="res://assets/Imagenes/Green.png" id="1_bjxyj"]
+[ext_resource type="PackedScene" uid="uid://cc7mbmcybef3r" path="res://Prefabs/scene_objects/player.tscn" id="5_ycx7l"]
+[ext_resource type="PackedScene" uid="uid://jtbatprb7t4n" path="res://Prefabs/scene_objects/stage.tscn" id="6_0w0nj"]
+[ext_resource type="PackedScene" uid="uid://dhqd1btrh2wln" path="res://Prefabs/ui/ui.tscn" id="7_inyjq"]
+[ext_resource type="PackedScene" uid="uid://6cnueqpr4wab" path="res://Prefabs/scene_objects/crash.tscn" id="8_f2ga2"]
+[ext_resource type="PackedScene" uid="uid://bbbixe583vglj" path="res://Prefabs/scene_objects/tiles/goal.tscn" id="8_gxfpw"]
+
+[node name="Nivel1" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_38k46")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bjxyj")
+stretch_mode = 1
+
+[node name="UI" parent="." node_paths=PackedStringArray("player", "goal") instance=ExtResource("7_inyjq")]
+player = NodePath("../SceneObjects/Player")
+label_text = "Stuk 1"
+goal = NodePath("../SceneObjects/Goal")
+
+[node name="SceneObjects" type="Node" parent="."]
+
+[node name="TileMap" parent="SceneObjects" instance=ExtResource("6_0w0nj")]
+z_index = 1
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(262149, 0, 5, 262150, 0, 5, 262151, 0, 5, 262152, 0, 5, 262153, 0, 5, 262154, 0, 5)
+
+[node name="Player" parent="SceneObjects" instance=ExtResource("5_ycx7l")]
+unique_name_in_owner = true
+z_index = 2
+position = Vector2(541, 335)
+
+[node name="Crash" parent="SceneObjects" instance=ExtResource("8_f2ga2")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(4, 131074, 2, 5, 131074, 2, 6, 131074, 2, 7, 131074, 2, 8, 131074, 2, 9, 131074, 2, 10, 131074, 2, 11, 131074, 2, 12, 131074, 2, 65539, 131074, 2, 131075, 131074, 2, 196611, 131074, 2, 262147, 131074, 2, 327683, 131074, 2, 393219, 131074, 2, 458756, 131074, 2, 458757, 131074, 2, 458758, 131074, 2, 458759, 131074, 2, 458760, 131074, 2, 458761, 131074, 2, 458762, 131074, 2, 458763, 131074, 2, 458764, 131074, 2, 393229, 131074, 2, 327693, 131074, 2, 262157, 131074, 2, 196621, 131074, 2, 131085, 131074, 2, 65549, 131074, 2, 327684, 131074, 2, 393220, 131074, 2, 393221, 131074, 2, 393222, 131074, 2, 393223, 131074, 2, 393224, 131074, 2, 393225, 131074, 2, 393226, 131074, 2, 393227, 131074, 2, 393228, 131074, 2, 327685, 131074, 2, 327686, 131074, 2, 327687, 131074, 2, 327688, 131074, 2, 327689, 131074, 2, 196614, 131074, 2, 131078, 131074, 2, 65542, 131074, 2, 65543, 131074, 2, 65544, 131074, 2, 65545, 131074, 2, 65546, 131074, 2, 65547, 131074, 2, 65548, 131074, 2, 131084, 131074, 2, 196620, 131074, 2, 262156, 131074, 2, 196619, 131074, 2, 131083, 131074, 2, 131082, 131074, 2, 131081, 131074, 2, 131080, 131074, 2, 131079, 131074, 2, 65541, 131074, 2, 196613, 131074, 2, 131077, 131074, 2, 65540, 131074, 2, 131076, 131074, 2, 196612, 131074, 2, 196615, 131074, 2, 196616, 131074, 2, 196617, 131074, 2, 196618, 131074, 2, 262148, 131074, 2, 327690, 131074, 2, 327691, 131074, 2, 327692, 131074, 2)
+
+[node name="Goal" parent="SceneObjects" instance=ExtResource("8_gxfpw")]
+position = Vector2(1020, 360)
+next_level = "res://Scenes/Niveles/nivel_2.tscn"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm8gmofiy8goc"]
+
+[ext_resource type="Script" path="res://Prefabs/scene_objects/tiles/lock_obstacle.gd" id="1_3t868"]
+[ext_resource type="Texture2D" uid="uid://b1hiytggfhw5f" path="res://assets/Sprites/bloques.png" id="1_i5mgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o281"]
+size = Vector2(68, 68)
+
+[node name="Lock Obstacle" type="StaticBody2D" groups=["crash", "crash_tile"]]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_3t868")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_i5mgg")
+region_enabled = true
+region_rect = Rect2(275, 70, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7o281")

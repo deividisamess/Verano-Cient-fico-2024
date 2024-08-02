@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckgqj56udx0t"]
+
+[ext_resource type="Script" path="res://Scenes/Niveles/game_manager.gd" id="2_ut22d"]
+[ext_resource type="Texture2D" uid="uid://bm44bbna6psv4" path="res://assets/Imagenes/Green.png" id="3_c2ee7"]
+[ext_resource type="PackedScene" uid="uid://dhqd1btrh2wln" path="res://Prefabs/ui/ui.tscn" id="4_hislc"]
+[ext_resource type="PackedScene" uid="uid://jtbatprb7t4n" path="res://Prefabs/scene_objects/stage.tscn" id="5_xfcdg"]
+[ext_resource type="PackedScene" uid="uid://cc7mbmcybef3r" path="res://Prefabs/scene_objects/player.tscn" id="6_ew8f4"]
+[ext_resource type="PackedScene" uid="uid://6cnueqpr4wab" path="res://Prefabs/scene_objects/crash.tscn" id="7_02j0t"]
+[ext_resource type="PackedScene" uid="uid://bbbixe583vglj" path="res://Prefabs/scene_objects/tiles/goal.tscn" id="8_5dsqx"]
+[ext_resource type="PackedScene" uid="uid://cm8gmofiy8goc" path="res://Prefabs/scene_objects/tiles/lock_obstacle.tscn" id="9_qeaay"]
+[ext_resource type="PackedScene" uid="uid://ccrwai0x8365w" path="res://Prefabs/scene_objects/tiles/star.tscn" id="9_wk3hb"]
+[ext_resource type="PackedScene" uid="uid://c7er6j3pryip7" path="res://Prefabs/scene_objects/tiles/looping_platform.tscn" id="11_k1lrt"]
+
+[node name="Nivel12" type="Node"]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stars")]
+unique_name_in_owner = true
+script = ExtResource("2_ut22d")
+stars = NodePath("../SceneObjects/Stars")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_c2ee7")
+stretch_mode = 1
+
+[node name="UI" parent="." node_paths=PackedStringArray("player", "goal") instance=ExtResource("4_hislc")]
+player = NodePath("../SceneObjects/Player")
+label_text = "Stuk 12"
+type_ui = 2
+goal = NodePath("../SceneObjects/Goal")
+
+[node name="SceneObjects" type="Node" parent="."]
+
+[node name="TileMap" parent="SceneObjects" instance=ExtResource("5_xfcdg")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(131079, 0, 0, 327687, 0, 0, 131080, 0, 0, 196616, 327680, 1, 327688, 0, 0, 131081, 0, 0, 327689, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 393227, 0, 0, 131084, 327680, 1, 262156, 0, 0, 393228, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 7, 0, 0, 9, 0, 0, 458762, 327680, 1)
+
+[node name="Player" parent="SceneObjects" instance=ExtResource("6_ew8f4")]
+unique_name_in_owner = true
+position = Vector2(461, 88)
+
+[node name="Crash" parent="SceneObjects" instance=ExtResource("7_02j0t")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array()
+
+[node name="Goal" parent="SceneObjects" instance=ExtResource("8_5dsqx")]
+position = Vector2(620, 440)
+next_level = "res://Scenes/Niveles/nivel_13.tscn"
+
+[node name="Stars" type="Node" parent="SceneObjects"]
+
+[node name="Star" parent="SceneObjects/Stars" instance=ExtResource("9_wk3hb")]
+position = Vector2(940, 600)
+
+[node name="Star2" parent="SceneObjects/Stars" instance=ExtResource("9_wk3hb")]
+position = Vector2(1100, 200)
+
+[node name="Star3" parent="SceneObjects/Stars" instance=ExtResource("9_wk3hb")]
+position = Vector2(780, 280)
+
+[node name="Lock Obstacle" parent="SceneObjects" node_paths=PackedStringArray("loop_platform") instance=ExtResource("9_qeaay")]
+position = Vector2(940, 120)
+loop_platform = NodePath("../Looping Platform")
+
+[node name="Lock Obstacle2" parent="SceneObjects" node_paths=PackedStringArray("loop_platform") instance=ExtResource("9_qeaay")]
+position = Vector2(860, 440)
+loop_platform = NodePath("../Looping Platform2")
+
+[node name="Looping Platform" parent="SceneObjects" instance=ExtResource("11_k1lrt")]
+position = Vector2(780, 40)
+expected_moves = "4"
+
+[node name="Looping Platform2" parent="SceneObjects" instance=ExtResource("11_k1lrt")]
+position = Vector2(1100, 440)
+expected_moves = "2"
+
+[connection signal="reached_zero" from="SceneObjects/Looping Platform" to="." method="_on_looping_platform_reached_zero"]
+[connection signal="reached_zero" from="SceneObjects/Looping Platform2" to="." method="_on_looping_platform_reached_zero"]

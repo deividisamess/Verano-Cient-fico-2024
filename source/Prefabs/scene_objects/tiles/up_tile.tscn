@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc77qhr0jatn3"]
+
+[ext_resource type="Texture2D" uid="uid://dc6q61lsx01p6" path="res://assets/Sprites/tiles/up_tile.png" id="1_b7esl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p7vo"]
+size = Vector2(68, 68)
+
+[node name="UpTile" type="StaticBody2D" groups=["up_tile"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_b7esl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7p7vo")
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+shape = SubResource("RectangleShape2D_7p7vo")

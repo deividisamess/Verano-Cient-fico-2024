@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg3j2eroh35ic"]
+
+[ext_resource type="Script" path="res://Prefabs/ui/platform.gd" id="1_rteh5"]
+[ext_resource type="Texture2D" uid="uid://tbnn7sqsqgi" path="res://assets/Imagenes/Code Slot Spritesheet 2.png" id="2_t7pau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xp8gh"]
+size = Vector2(945.214, 116.25)
+
+[node name="platform" type="StaticBody2D" groups=["droppable"]]
+script = ExtResource("1_rteh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(166.587, 24.0062)
+scale = Vector2(0.35, 0.35)
+shape = SubResource("RectangleShape2D_xp8gh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(166, 35.35)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_t7pau")

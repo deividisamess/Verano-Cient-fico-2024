@@ -1,0 +1,407 @@
+[gd_scene load_steps=22 format=3 uid="uid://dcdb0q5o4wejl"]
+
+[ext_resource type="Texture2D" uid="uid://bilvpdv3le1ay" path="res://assets/Imagenes/I2.jpg" id="1_ibkmk"]
+[ext_resource type="FontFile" uid="uid://s0liaxtkw8pv" path="res://assets/Fonts/Oswald-VariableFont_wght.ttf" id="2_l4crk"]
+[ext_resource type="PackedScene" uid="uid://3ix8sg5u6mat" path="res://Prefabs/lvl_btn.tscn" id="3_2ptdr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7csac"]
+bg_color = Color(0, 0, 0, 0.372549)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp65o"]
+bg_color = Color(0.0862745, 0.541176, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldvu2"]
+bg_color = Color(0.0941176, 0.305882, 0.466667, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyvmq"]
+bg_color = Color(0.85098, 0.929412, 0.572549, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghysn"]
+bg_color = Color(0.459393, 0.521417, 0.186912, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j75ou"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_seege"]
+bg_color = Color(0.709804, 0.894118, 0.54902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tpp6"]
+bg_color = Color(0.316952, 0.441504, 0.197574, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctsbi"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhaog"]
+bg_color = Color(0.6, 0.85098, 0.54902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duatb"]
+bg_color = Color(0.300709, 0.482141, 0.263863, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwe6v"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3hx"]
+bg_color = Color(0.462745, 0.784314, 0.576471, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj8gr"]
+bg_color = Color(0.184148, 0.372213, 0.253958, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abn6i"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlwds"]
+bg_color = Color(0.321569, 0.713726, 0.603922, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryixx"]
+bg_color = Color(0.148221, 0.3856, 0.320527, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rv6d"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="LevelSelect" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ibkmk")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 116.0
+offset_top = 60.0
+offset_right = -116.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7csac")
+
+[node name="Label" type="Label" parent="Control/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 230.0
+offset_top = 30.0
+offset_right = -230.0
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_l4crk")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_fp65o")
+text = "SELECCIÓN DE NIVELES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Control/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 113.0
+offset_right = -33.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldvu2")
+
+[node name="GridContainer" type="GridContainer" parent="Control/TextureRect/Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = 37.0
+offset_right = -71.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Nivel1" parent="Control/TextureRect/Panel/Panel/GridContainer" instance=ExtResource("3_2ptdr")]
+layout_mode = 2
+
+[node name="Nivel2" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_yyvmq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghysn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j75ou")
+text = "2"
+
+[node name="Nivel3" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_yyvmq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghysn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j75ou")
+text = "3"
+
+[node name="Nivel4" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_seege")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3tpp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ctsbi")
+text = "4"
+
+[node name="Nivel5" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_seege")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3tpp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ctsbi")
+text = "5"
+
+[node name="Nivel6" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_seege")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3tpp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ctsbi")
+text = "6"
+
+[node name="Nivel7" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhaog")
+theme_override_styles/hover = SubResource("StyleBoxFlat_duatb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rwe6v")
+text = "7"
+
+[node name="Nivel8" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhaog")
+theme_override_styles/hover = SubResource("StyleBoxFlat_duatb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rwe6v")
+text = "8"
+
+[node name="Nivel9" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhaog")
+theme_override_styles/hover = SubResource("StyleBoxFlat_duatb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rwe6v")
+text = "9"
+
+[node name="Nivel10" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3y3hx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tj8gr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_abn6i")
+text = "10"
+
+[node name="Nivel11" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3y3hx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tj8gr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_abn6i")
+text = "11"
+
+[node name="Nivel12" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3y3hx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tj8gr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_abn6i")
+text = "12"
+
+[node name="Nivel13" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlwds")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ryixx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2rv6d")
+text = "13"
+
+[node name="Nivel14" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlwds")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ryixx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2rv6d")
+text = "14"
+
+[node name="Nivel15" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlwds")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ryixx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2rv6d")
+text = "15"

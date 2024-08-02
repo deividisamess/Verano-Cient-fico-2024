@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnrcw0lhy3l27"]
+
+[ext_resource type="Script" path="res://Scenes/Niveles/game_manager.gd" id="1_h24n8"]
+[ext_resource type="Texture2D" uid="uid://bm44bbna6psv4" path="res://assets/Imagenes/Green.png" id="2_17onw"]
+[ext_resource type="PackedScene" uid="uid://jtbatprb7t4n" path="res://Prefabs/scene_objects/stage.tscn" id="4_omt0v"]
+[ext_resource type="PackedScene" uid="uid://cc7mbmcybef3r" path="res://Prefabs/scene_objects/player.tscn" id="5_ihfp7"]
+[ext_resource type="PackedScene" uid="uid://6cnueqpr4wab" path="res://Prefabs/scene_objects/crash.tscn" id="6_ph3iw"]
+[ext_resource type="PackedScene" uid="uid://dhqd1btrh2wln" path="res://Prefabs/ui/ui.tscn" id="7_3iya5"]
+[ext_resource type="PackedScene" uid="uid://bbbixe583vglj" path="res://Prefabs/scene_objects/tiles/goal.tscn" id="8_qy6q3"]
+[ext_resource type="PackedScene" uid="uid://ccrwai0x8365w" path="res://Prefabs/scene_objects/tiles/star.tscn" id="8_r42bp"]
+
+[node name="Nivel5" type="Node"]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stars")]
+unique_name_in_owner = true
+script = ExtResource("1_h24n8")
+stars = NodePath("../SceneObjects/Stars")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_17onw")
+stretch_mode = 1
+
+[node name="UI" parent="." node_paths=PackedStringArray("player", "goal") instance=ExtResource("7_3iya5")]
+player = NodePath("../SceneObjects/Player")
+label_text = "Stuk 5"
+goal = NodePath("../SceneObjects/Goal")
+
+[node name="SceneObjects" type="Node" parent="."]
+
+[node name="TileMap" parent="SceneObjects" instance=ExtResource("4_omt0v")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(131076, 0, 5, 196612, 0, 5, 262148, 0, 5, 327684, 0, 5, 393220, 0, 5, 262149, 0, 5, 393221, 0, 5, 131078, 0, 5, 196614, 0, 5, 262150, 0, 5, 393222, 327680, 1, 196615, 0, 5, 196616, 0, 5, 196617, 0, 5, 262153, 0, 5, 327689, 0, 5, 393225, 0, 5, 393226, 0, 5, 393227, 327680, 2, 65540, 0, 5, 65542, 0, 5, 65543, 0, 5, 65544, 327680, 1)
+
+[node name="Player" parent="SceneObjects" instance=ExtResource("5_ihfp7")]
+unique_name_in_owner = true
+position = Vector2(461, 98)
+
+[node name="Crash" parent="SceneObjects" instance=ExtResource("6_ph3iw")]
+position = Vector2(100, 0)
+layer_0/tile_data = PackedInt32Array(4, 131074, 2, 5, 131074, 2, 6, 131074, 2, 7, 131074, 2, 8, 131074, 2, 9, 131074, 2, 65539, 131074, 2, 131075, 131074, 2, 196611, 131074, 2, 262147, 131074, 2, 327683, 131074, 2, 393219, 131074, 2, 458756, 131074, 2, 458757, 131074, 2, 458758, 131074, 2, 458759, 131074, 2, 458760, 131074, 2, 458761, 131074, 2, 458762, 131074, 2, 458763, 131074, 2, 458764, 131074, 2, 3, 131074, 2, 458755, 131074, 2, 393223, 131074, 2, 327687, 131074, 2, 327686, 131074, 2, 327685, 131074, 2, 262151, 131074, 2, 262152, 131074, 2, 327688, 131074, 2, 393224, 131074, 2, 393228, 131074, 2, 327692, 131074, 2, 327691, 131074, 2, 327690, 131074, 2, 262154, 131074, 2, 196618, 131074, 2, 131082, 131074, 2, 131081, 131074, 2, 131080, 131074, 2, 131079, 131074, 2, 65545, 131074, 2, 65541, 131074, 2, 131077, 131074, 2, 196613, 131074, 2)
+
+[node name="Goal" parent="SceneObjects" instance=ExtResource("8_qy6q3")]
+position = Vector2(1020, 520)
+next_level = "res://Scenes/Niveles/nivel_6.tscn"
+
+[node name="Stars" type="Node" parent="SceneObjects"]
+
+[node name="Star" parent="SceneObjects/Stars" instance=ExtResource("8_r42bp")]
+position = Vector2(780, 120)
+
+[node name="Star2" parent="SceneObjects/Stars" instance=ExtResource("8_r42bp")]
+position = Vector2(620, 520)

@@ -1,0 +1,6 @@
+res://Scenes/main_menu.tscn
+res://Prefabs/components/block_positions_component.gd
+res://Scenes/level_select.tscn
+res://Prefabs/code_blocks/move_blocks.tscn
+res://Prefabs/code_blocks/repeat_blocks.tscn
+res://Prefabs/code_blocks/if_blocks.tscn

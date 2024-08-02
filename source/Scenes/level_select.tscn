@@ -1,0 +1,550 @@
+[gd_scene load_steps=32 format=3 uid="uid://dcdb0q5o4wejl"]
+
+[ext_resource type="Texture2D" uid="uid://bilvpdv3le1ay" path="res://assets/Imagenes/I2.jpg" id="1_ibkmk"]
+[ext_resource type="Script" path="res://Scenes/level_select.gd" id="1_yj26t"]
+[ext_resource type="FontFile" uid="uid://s0liaxtkw8pv" path="res://assets/Fonts/Oswald-VariableFont_wght.ttf" id="2_l4crk"]
+[ext_resource type="Script" path="res://Prefabs/scene_objects/lvl_btn.gd" id="3_80lm8"]
+[ext_resource type="Texture2D" uid="uid://durcax7u82gmq" path="res://assets/Sprites/buttons/main_menu/sideswipe.svg" id="5_apqpt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7csac"]
+bg_color = Color(0, 0, 0, 0.372549)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp65o"]
+bg_color = Color(0.0862745, 0.541176, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldvu2"]
+bg_color = Color(0.0941176, 0.305882, 0.466667, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyvmq"]
+bg_color = Color(0.85098, 0.929412, 0.572549, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghysn"]
+bg_color = Color(0.459393, 0.521417, 0.186912, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j75ou"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lx53f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kpc3"]
+bg_color = Color(0.85098, 0.929412, 0.572549, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tvxy"]
+bg_color = Color(0.459393, 0.521417, 0.186912, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy6jw"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_seege"]
+bg_color = Color(0.709804, 0.894118, 0.54902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tpp6"]
+bg_color = Color(0.316952, 0.441504, 0.197574, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctsbi"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhaog"]
+bg_color = Color(0.6, 0.85098, 0.54902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duatb"]
+bg_color = Color(0.300709, 0.482141, 0.263863, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwe6v"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3hx"]
+bg_color = Color(0.462745, 0.784314, 0.576471, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj8gr"]
+bg_color = Color(0.184148, 0.372213, 0.253958, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abn6i"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlwds"]
+bg_color = Color(0.321569, 0.713726, 0.603922, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryixx"]
+bg_color = Color(0.148221, 0.3856, 0.320527, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rv6d"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oij2y"]
+bg_color = Color(0.462745, 0.784314, 0.576471, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5js7x"]
+bg_color = Color(0.184314, 0.372549, 0.254902, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj7hl"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgf2a"]
+
+[node name="LevelSelect" type="Node"]
+script = ExtResource("1_yj26t")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ibkmk")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 116.0
+offset_top = 60.0
+offset_right = -116.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7csac")
+
+[node name="Label" type="Label" parent="Control/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 230.0
+offset_top = 30.0
+offset_right = -230.0
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_l4crk")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_fp65o")
+text = "Selección de Niveles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Control/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 113.0
+offset_right = -33.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldvu2")
+
+[node name="GridContainer" type="GridContainer" parent="Control/TextureRect/Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = 37.0
+offset_right = -71.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Nivel1" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_yyvmq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghysn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j75ou")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "1"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_1.tscn"
+
+[node name="Nivel2" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_8kpc3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4tvxy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iy6jw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "2"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_2.tscn"
+
+[node name="Nivel3" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_8kpc3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4tvxy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iy6jw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "3"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_3.tscn"
+
+[node name="Nivel4" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_seege")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3tpp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ctsbi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "4"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_4.tscn"
+
+[node name="Nivel5" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_seege")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3tpp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ctsbi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "5"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_5.tscn"
+
+[node name="Nivel6" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_seege")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3tpp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ctsbi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "6"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_6.tscn"
+
+[node name="Nivel7" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhaog")
+theme_override_styles/hover = SubResource("StyleBoxFlat_duatb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rwe6v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "7"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_7.tscn"
+
+[node name="Nivel8" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhaog")
+theme_override_styles/hover = SubResource("StyleBoxFlat_duatb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rwe6v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "8"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_8.tscn"
+
+[node name="Nivel9" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhaog")
+theme_override_styles/hover = SubResource("StyleBoxFlat_duatb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rwe6v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "9"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_9.tscn"
+
+[node name="Nivel10" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3y3hx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tj8gr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_abn6i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "10"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_10.tscn"
+
+[node name="Nivel11" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3y3hx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tj8gr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_abn6i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "11"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_11.tscn"
+
+[node name="Nivel12" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3y3hx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tj8gr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_abn6i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "12"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_12.tscn"
+
+[node name="Nivel13" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlwds")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ryixx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2rv6d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "13"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_13.tscn"
+
+[node name="Nivel14" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlwds")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ryixx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2rv6d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "14"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_14.tscn"
+
+[node name="Nivel15" type="Button" parent="Control/TextureRect/Panel/Panel/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlwds")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ryixx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2rv6d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lx53f")
+text = "15"
+script = ExtResource("3_80lm8")
+level_path = "res://Scenes/Niveles/nivel_15.tscn"
+
+[node name="TextureButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 477.0
+offset_top = -313.0
+offset_right = 563.0
+offset_bottom = -249.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oij2y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5js7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rj7hl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vgf2a")
+icon = ExtResource("5_apqpt")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel1" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel1" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel2" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel2" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel3" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel3" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel4" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel4" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel5" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel5" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel6" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel6" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel7" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel7" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel8" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel8" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel9" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel9" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel10" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel10" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel11" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel11" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel12" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel12" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel13" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel13" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel14" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel14" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Panel/Panel/GridContainer/Nivel15" to="Control/TextureRect/Panel/Panel/GridContainer/Nivel15" method="_on_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

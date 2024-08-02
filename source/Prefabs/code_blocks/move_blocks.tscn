@@ -1,0 +1,207 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2lpbdpegsatv"]
+
+[ext_resource type="PackedScene" uid="uid://dwuv4hef5cl7p" path="res://Prefabs/code_blocks/code_blocks.tscn" id="1_30w10"]
+[ext_resource type="Script" path="res://Prefabs/code_blocks/move_blocks.gd" id="1_j2ye8"]
+[ext_resource type="FontFile" uid="uid://s0liaxtkw8pv" path="res://assets/Fonts/Oswald-VariableFont_wght.ttf" id="3_ua0mg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gyw76"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_diben"]
+bg_color = Color(1, 0.992157, 0.509804, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5avhk"]
+bg_color = Color(0.950172, 0.928131, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 12.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h3vkw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrygh"]
+size = Vector2(176.429, 6.42859)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_801fa"]
+size = Vector2(176.429, 29.2857)
+
+[node name="Move Blocks" instance=ExtResource("1_30w10")]
+script = ExtResource("1_j2ye8")
+size = 1
+
+[node name="Overlay" parent="." index="1"]
+layer_0/modulate = Color(0, 0.47451, 1, 1)
+
+[node name="function" parent="Overlay/Control/LabelControl" index="0"]
+theme_override_fonts/font = ExtResource("3_ua0mg")
+theme_override_font_sizes/font_size = 60
+text = "Mover Robot"
+horizontal_alignment = 1
+
+[node name="MovesControl" type="Control" parent="Overlay/Control" index="1"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -411.999
+offset_top = -7.32601
+offset_right = -111.999
+offset_bottom = -87.326
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Overlay/Control/MovesControl" index="0"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -28.5
+offset_right = 188.0
+offset_bottom = 28.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ua0mg")
+theme_override_font_sizes/font_size = 40
+text = "moves = "
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Overlay/Control/MovesControl" index="1"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_right = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="moves" type="OptionButton" parent="Overlay/Control/MovesControl" index="2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/modulate_arrow = 1
+theme_override_fonts/font = ExtResource("3_ua0mg")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gyw76")
+theme_override_styles/normal = SubResource("StyleBoxFlat_diben")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5avhk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_diben")
+item_count = 8
+selected = 0
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
+popup/item_2/text = "3"
+popup/item_2/id = 2
+popup/item_3/text = "4"
+popup/item_3/id = 3
+popup/item_4/text = "5"
+popup/item_4/id = 4
+popup/item_5/text = "6"
+popup/item_5/id = 5
+popup/item_6/text = "7"
+popup/item_6/id = 6
+popup/item_7/text = "8"
+popup/item_7/id = 7
+
+[node name="DirectionControl" type="Control" parent="Overlay/Control" index="2"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -411.999
+offset_top = 62.674
+offset_right = 9.00073
+offset_bottom = -7.326
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Overlay/Control/DirectionControl" index="0"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -27.5
+offset_right = 227.0
+offset_bottom = 27.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ua0mg")
+theme_override_font_sizes/font_size = 40
+text = "direction ="
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Overlay/Control/DirectionControl" index="1"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_right = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="direction" type="OptionButton" parent="Overlay/Control/DirectionControl" index="2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 248.0
+offset_top = -32.0
+offset_right = 363.0
+offset_bottom = 34.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/modulate_arrow = 1
+theme_override_fonts/font = ExtResource("3_ua0mg")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h3vkw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_diben")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5avhk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_diben")
+item_count = 4
+selected = 0
+popup/item_0/text = "Up"
+popup/item_0/id = 0
+popup/item_1/text = "Down"
+popup/item_1/id = 1
+popup/item_2/text = "Right"
+popup/item_2/id = 2
+popup/item_3/text = "Left"
+popup/item_3/id = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(88.2142, 14.6428)
+shape = SubResource("RectangleShape2D_qrygh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse Detect" index="0"]
+position = Vector2(88.2142, 14.6429)
+shape = SubResource("RectangleShape2D_801fa")
